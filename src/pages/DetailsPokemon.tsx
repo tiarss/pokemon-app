@@ -33,7 +33,7 @@ function DetailsPokemon() {
     status: "info",
   });
   const [open, setOpen] = useState(false);
-  const [localState, setLocalState] = useLocalStorage<saveLocalType[]>('data',[]);
+  const [localState] = useLocalStorage<saveLocalType[]>('data',[]);
 
   useEffect(() => {
     fetchDataID();
