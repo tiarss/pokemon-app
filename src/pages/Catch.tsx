@@ -150,7 +150,11 @@ function Catch() {
           background:
             "linear-gradient(0deg, rgba(0,59,114,1) 0%, rgba(12,42,77,1) 100%)",
         }}>
-        <Typography>Pokemon List</Typography>
+        <Typography
+          variant='h4'
+          sx={{ textAlign: "center", color: "white", pb: "20px" }}>
+          Pokemon List
+        </Typography>
         <Accordion
           key='a'
           expanded={expanded === `name`}
