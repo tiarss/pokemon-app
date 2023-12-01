@@ -1,26 +1,25 @@
-import Box from "@mui/material/Box";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+import Box from "@mui/material/Box";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import React, { useEffect, useState } from "react";
-import { dataCatchType } from "../Types";
 import Skeleton from "@mui/material/Skeleton";
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-import { useNavigate } from "react-router-dom";
+
+import { dataCatchType } from "../Types";
 
 function Catch() {
-  const dataCatchDefault: dataCatchType[] = [];
   const [expanded, setExpanded] = useState<string | false>(false);
-  const [link] = useState<string>(
+  const link =
     "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
-  );
-  const [data, setData] = useState(dataCatchDefault);
+  const [data, setData] = useState<dataCatchType[]>([]);
   const [isReady, setIsReady] = useState<boolean>(false);
   const navigate = useNavigate();
 
